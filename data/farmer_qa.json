@@ -1,0 +1,17 @@
+[
+    {
+        "question": "Cotton leaves turning yellow",
+        "answer": "Possible nitrogen deficiency or fungal infection. Use proper fertilizer and fungicide.",
+        "language": "english"
+    },
+    {
+        "question": "कपास के पत्ते पीले क्यों हो रहे हैं",
+        "answer": "यह नाइट्रोजन की कमी या फंगल संक्रमण हो सकता है।",
+        "language": "hindi"
+    },
+    {
+        "question": "કપાસ ના પાન પીળા કેમ થાય છે",
+        "answer": "આ નાઇટ્રોજન ની કમી અથવા ફંગસ ના કારણે હોઈ શકે છે.",
+        "language": "gujarati"
+    }
+]
