@@ -1,8 +1,20 @@
 import sqlite3
+import os
+import shutil
 from datetime import datetime
 
-DB_PATH = "db/chatbot.db"
+# Use /tmp for writable operations
+TMP_DB_PATH = "/tmp/db/chatbot.db"
+PROJECT_DB_PATH = "db/chatbot.db"
 
+# Copy existing database from project to /tmp if it doesn't exist in /tmp
+os.makedirs('/tmp/db', exist_ok=True)
+
+if not os.path.exists(TMP_DB_PATH) and os.path.exists(PROJECT_DB_PATH):
+    shutil.copy2(PROJECT_DB_PATH, TMP_DB_PATH)
+    print(f"✅ Copied database from {PROJECT_DB_PATH} to {TMP_DB_PATH}")
+
+DB_PATH = TMP_DB_PATH
 
 def init_db():
     conn = sqlite3.connect(DB_PATH)
@@ -22,6 +34,8 @@ def init_db():
 
     conn.commit()
     conn.close()
+    print(f"✅ Database initialized at {DB_PATH}")
+
 
 
 def save_message(thread_name, role, message):
